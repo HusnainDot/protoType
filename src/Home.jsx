@@ -1,8 +1,14 @@
 import { useGSAP } from "@gsap/react";
 import React, { useRef, useState } from "react";
-
 import { gsap } from "gsap";
 import { FaArrowDown } from "react-icons/fa";
+
+import bgImg from "./images/bg.png";
+import character from "./images/9b48f167-3aeb-457f-b8d3-9c20324f9a9e.png";
+import character2 from "./images/20250505_1316_Futuristic Fashion Pose_remix_01jtfpfprqen293p9pr685wnqw.png";
+import logo18 from "./images/logo18.png";
+import imgPs5 from "./images/ps5.png";
+import imgSky from "./images/sky.png";
 
 const Home = () => {
   let [showContent, setShowContent] = useState(false);
@@ -69,7 +75,7 @@ const Home = () => {
             </mask>
           </defs>
           <image
-            href="./bg.png"
+            href={bgImg}
             width="100%"
             height="100%"
             preserveAspectRatio="xMidYMid slice"
@@ -97,17 +103,17 @@ const Home = () => {
             <div className="imagDiv relative w-full h-screen overflow-hidden ">
               <img
                 className="absolute w-full h-full object-cover top-0 left-0 "
-                src="../public/sky.png"
+                src={imgSky}
                 alt=""
               />
               <img
                 className="absolute w-full h-full object-cover top-0 left-0 "
-                src="../public/bg.png"
+                src={bgImg}
                 alt=""
               />
               <img
                 className="absolute  -bottom-[0%] lg:-bottom-[20%] xl:-bottom-[30%] xl:scale-90 2xl:-bottom-[50%] 2xl:scale-80 @max-3xl:scale-100  @max-3xl:bottom-0  left-1/2 -translate-x-1/2  "
-                src="../public/9b48f167-3aeb-457f-b8d3-9c20324f9a9e.png"
+                src={character}
                 alt=""
               />
             </div>
@@ -123,11 +129,7 @@ const Home = () => {
                 </div>
 
                 <div className=" w-[200px] md:w-[300px] h-[200px]  absolute md:-translate-x-1/2 left-1/2 top-0 z-50">
-                  <img
-                    src="../public/ps5.png"
-                    alt=""
-                    className="object-contain  "
-                  />
+                  <img src={imgPs5} alt="" className="object-contain  " />
                 </div>
               </div>
             </div>
