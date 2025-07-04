@@ -106,23 +106,23 @@ const Home = () => {
                 alt=""
               />
               <img
-                className="absolute  scale-80 -bottom-[30%] md:-bottom-[40%] md:scale-90    xl:-bottom-1/2  xl:scale-80 2xl:scale-100  left-1/2 -translate-x-1/2 "
+                className="absolute  -bottom-[0%] lg:-bottom-[20%] xl:-bottom-[30%] xl:scale-90 2xl:-bottom-[50%] 2xl:scale-80 @max-3xl:scale-100  @max-3xl:bottom-0  left-1/2 -translate-x-1/2  "
                 src="../public/9b48f167-3aeb-457f-b8d3-9c20324f9a9e.png"
                 alt=""
               />
             </div>
 
-            <div className="bottomBar  absolute bottom-10  w-full flex items-center px-10 overflow-hidden   ">
+            <div className="bottomBar  absolute bottom-10  w-full flex items-center px-10  ">
               <div className="flex items-center relative w-full h-full">
-                <div className="flex items-center gap-3 py-3 px-3 rounded-full border border-white">
-                  <FaArrowDown size={40} className="text-white" />
+                <div className="flex items-center gap-3 py-2 px-1 rounded-full border border-white">
+                  <FaArrowDown className="text-white text-sm sm:text-base md:text-xl lg:text-2xl" />
 
-                  <h3 className="capitalize text-2xl text-white font-serif ">
+                  <h3 className="capitalize  text-white font-serif text-sm sm:text-base md:text-xl lg:text-2xl ">
                     Scroll Down
                   </h3>
                 </div>
 
-                <div className=" w-[300px] h-[300px] absolute -translate-x-1/2 left-1/2 top-0 z-50">
+                <div className=" w-[200px] md:w-[300px] h-[200px]  absolute md:-translate-x-1/2 left-1/2 top-0 z-50">
                   <img
                     src="../public/ps5.png"
                     alt=""
@@ -131,7 +131,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="h-[100px] absolute bottom-0 w-full mask-t-from-4 py-2">a</div>
+            <div className="h-[100px] absolute bottom-0 w-full mask-t-from-4 z-[999999999999] py-2 bg-black"></div>
           </div>
         </div>
       )}
