@@ -51,80 +51,82 @@ const Home = () => {
     [];
 
   useGSAP(() => {
-    if (!showContent) return;
-    const mainContent = mainContentRef.current;
-    const text = textRef.current;
-    const bgImg = bgImgRef.current;
-    const bgSky = bgSkyRef.current;
-    const charImg = charRef.current;
+  
+      if (showContent) {
+        const mainContent = mainContentRef.current;
+        const text = textRef.current;
+        const bgImg = bgImgRef.current;
+        const bgSky = bgSkyRef.current;
+        const charImg = charRef.current;
 
-    if (bgImg || text || bgSky || charImg || mainContent) {
-      gsap.to(mainContent, {
-        rotate: 0,
-        scale: 1,
-        duration: 2,
-        delay: -0.7,
-        ease: "expo.inOut",
-      });
-      gsap.to(bgImg, {
-        rotate: 0,
-        scale: 1.1,
-        duration: 2,
-        delay: -0.7,
-        ease: "expo.inOut",
-      });
-      gsap.to(bgSky, {
-        rotate: 0,
-        scale: 1.1,
-        duration: 2,
-        delay: -0.7,
-        ease: "expo.inOut",
-      });
-
-      gsap.to(charImg, {
-        x: "-50%",
-        duration: 2,
-        delay: -1.1,
-        ease: "expo.inOut",
-        rotate: 0,
-        opacity: 1,
-      });
-
-      gsap.to(text, {
-        rotate: 0,
-        scale: 1,
-        duration: 2,
-        delay: -0.7,
-        ease: "expo.inOut",
-        stagger: 2,
-        opacity: 1,
-      });
-    }
-
-    if (mainContent) {
-      const handleMouseMove = (e) => {
-        const xMove = (e.clientX / window.innerWidth - 0.5) * 40;
-
-        if (bgImg || text || bgSky || charImg) {
-          gsap.to(text, {
-            x: xMove * 2,
+        if (bgImg || text || bgSky || charImg || mainContent) {
+          gsap.to(mainContent, {
+            rotate: 0,
+            scale: 1,
+            duration: 2.5,
+            delay: -0.7,
+            ease: "expo.inOut",
           });
           gsap.to(bgImg, {
-            x: xMove,
+            rotate: 0,
+            scale: 1.1,
+            duration: 2.5,
+            delay: -0.7,
+            ease: "expo.inOut",
           });
           gsap.to(bgSky, {
-            x: xMove,
+            rotate: 0,
+            scale: 1.1,
+            duration: 2.5,
+            delay: -0.7,
+            ease: "expo.inOut",
+          });
+
+          gsap.to(charImg, {
+            x: "-50%",
+            duration: 2.5,
+            delay: -1.1,
+            ease: "expo.inOut",
+            rotate: 0,
+            opacity: 1,
+          });
+
+          gsap.to(text, {
+            rotate: 0,
+            scale: 1,
+            duration: 3,
+            delay: -0.7,
+            ease: "expo.inOut",
+            stagger: 2,
+            opacity: 1,
           });
         }
-      };
 
-      mainContent.addEventListener("mousemove", handleMouseMove);
+        if (mainContent) {
+          const handleMouseMove = (e) => {
+            const xMove = (e.clientX / window.innerWidth - 0.5) * 40;
 
-      return () => {
-        mainContent.removeEventListener("mousemove", handleMouseMove);
-      };
-    }
-  }, [showContent]);
+            if (bgImg || text || bgSky || charImg) {
+              gsap.to(text, {
+                x: xMove * 2,
+              });
+              gsap.to(bgImg, {
+                x: xMove,
+              });
+              gsap.to(bgSky, {
+                x: xMove,
+              });
+            }
+          };
+
+          mainContent.addEventListener("mousemove", handleMouseMove);
+
+          return () => {
+            mainContent.removeEventListener("mousemove", handleMouseMove);
+          };
+        }
+      }
+  }, [showContent,setShowContent]);
 
   return (
     <>
@@ -169,7 +171,7 @@ const Home = () => {
       {showContent && (
         <div
           ref={mainContentRef}
-          className="w-full  bg-black overflow-hidden -rotate-5 scale-120 "
+          className="w-full  bg-black overflow-hidden -rotate-5 scale-120  "
         >
           <div className="w-full h-screen overflow-hidden relative ">
             <div className="navBar  fixed top-0 w-full  z-[50] flex items-center  p-5 md:p-10 ">
@@ -214,7 +216,7 @@ const Home = () => {
                 </h3>
               </div>
               <img
-                className="absolute -rotate-90 opacity-0  scale-100 bottom-0 lg:-bottom-[20%] lg:scale-70 xl:-bottom-[50%] xl:scale-50 2xl:-bottom-[45%] 2xl:scale-60 left-1/2 -translate-x-1/2 z-[50]  char "
+                className="absolute -rotate-45 opacity-0  scale-100 bottom-0 lg:-bottom-[20%] lg:scale-70 xl:-bottom-[50%] xl:scale-50 2xl:-bottom-[45%] 2xl:scale-60 left-1/2 -translate-x-1/2 z-[50]  char "
                 ref={charRef}
                 src={character}
                 alt=""
