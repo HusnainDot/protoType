@@ -10,4 +10,14 @@ body {
   height: 100%;
   width: 100%;
   font-family: Primary-Font;
+  overflow-x: hidden;
+}
+
+
+
+@media (min-width: 1540px) {
+  .char {
+    scale: 0.8 !important;
+    bottom: -30% !important;
+  }
 }
