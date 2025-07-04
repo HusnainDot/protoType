@@ -97,7 +97,7 @@ const Home = () => {
             duration: 3,
             delay: -0.7,
             ease: "expo.inOut",
-            stagger: 2,
+           
             opacity: 1,
           });
         }
