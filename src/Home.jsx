@@ -171,7 +171,7 @@ const Home = () => {
           ref={mainContentRef}
           className="w-full  bg-black overflow-hidden -rotate-5 scale-120 "
         >
-          <div className="w-full h-screen  relative ">
+          <div className="w-full h-screen overflow-hidden relative ">
             <div className="navBar  fixed top-0 w-full  z-[50] flex items-center  p-5 md:p-10 ">
               <div className="flex items-end gap-10">
                 <div className="">
